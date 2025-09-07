@@ -3,7 +3,9 @@ import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
 import 'package:taskati/core/constants/app_images.dart';
 import 'package:taskati/core/functions/navigation.dart';
+import 'package:taskati/core/services/local_helper.dart';
 import 'package:taskati/core/utils/text_styles.dart';
+import 'package:taskati/features/home/home_screen.dart';
 import 'package:taskati/features/upload/upload_screen.dart';
 
 
@@ -19,8 +21,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState(){
   super.initState();
+  bool isUploaded = LocalHelper.getData(LocalHelper.kisUploaded) ?? false;
   Future.delayed(const Duration(seconds: 3) , (){
+    if(isUploaded)
+    {
+     pushWithReplacment(context, HomeScreen());
+    }
+    else
+    {
     pushWithReplacment(context, UploadScreen());
+    }
     //pushWithReplacment(context, const SelectLocationScreen());
   });
   }
