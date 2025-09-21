@@ -14,7 +14,7 @@ void showErrorDialog(BuildContext context, String message) {
       ),
       content: Text(
         message,
-        style: TextStyles.bodyStyle(AppColors.whiteColor),
+        style: TextStyles.bodyStyle(color: AppColors.whiteColor),
       ),
     ),
   );

@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:taskati/core/functions/navigation.dart';
 import 'package:taskati/core/utils/text_styles.dart';
 import 'package:taskati/core/widgets/main_button.dart';
-import 'package:taskati/features/add_task/add_task_screen.dart';
+import 'package:taskati/features/add_edit_task/add_task_screen.dart';
 
 class TodayHeader extends StatelessWidget {
   const TodayHeader({
@@ -20,7 +20,7 @@ class TodayHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(DateFormat.MMMMEEEEd().format(DateTime.now()) , style: TextStyles.titleStyle(),),
-              Text('Today' , style: TextStyles.bodyStyle(Colors.grey),)
+              Text('Today' , style: TextStyles.bodyStyle(color: Colors.grey),)
             ],
           ),
         ),
@@ -28,7 +28,7 @@ class TodayHeader extends StatelessWidget {
           width: 140,
           height: 40,
           text: 'Add Task', onPressed: (){
-            pushTo(context, AddTaskScreen());
+            pushTo(context, AddEditTaskScreen());
           })
       ],
     );

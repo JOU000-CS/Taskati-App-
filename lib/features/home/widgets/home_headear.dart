@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:taskati/core/constants/app_images.dart';
 import 'package:taskati/core/services/local_helper.dart';
 import 'package:taskati/core/utils/colors.dart';
 import 'package:taskati/core/utils/text_styles.dart';
+import 'package:taskati/features/profile/edit_profile_screen.dart';
 
 class HomeHeadear extends StatefulWidget {
   const HomeHeadear({
@@ -42,16 +42,27 @@ class _HomeHeadearState extends State<HomeHeadear> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text( "Hello, ${userName ?? 'User'}",  style: TextStyles.titleStyle(color: AppColors.primaryColor),),
-              Text('Have a nice day' , style: TextStyles.bodyStyle(Colors.grey),)
+              Text('Have a nice day' , style: TextStyles.bodyStyle(color: Colors.grey),)
             ],
           ),
         ),
-        CircleAvatar(
-          radius: 30,
-          backgroundColor: AppColors.primaryColor,
-          backgroundImage: imageExists
-            ? FileImage(File(imagePath!))
-            : const AssetImage(AppImages.emptyUser) as ImageProvider,
+        IconButton(onPressed: (){LocalHelper.changeTheme();}, icon: Icon(Icons.dark_mode , color: AppColors.OrangeColor,)),
+        GestureDetector(
+          onTap: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => EditProfileScreen()),
+            );
+            _loadUserData();
+            setState(() {});
+          },
+          child: CircleAvatar(
+            radius: 30,
+            backgroundColor: AppColors.primaryColor,
+            backgroundImage: imageExists
+              ? FileImage(File(imagePath!))
+              : const AssetImage(AppImages.emptyUser) as ImageProvider,
+          ),
         ),
       ],
     );

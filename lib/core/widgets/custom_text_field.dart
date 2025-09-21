@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
-    super.key, this.hint, this.validator, required this.controller,  this.maxLines = 1, this.suffixIcon , this.readOnly = true, this.onTap
+    super.key, this.hint, this.validator, required this.controller,  this.maxLines = 1, this.suffixIcon , this.readOnly = false, this.onTap
   });
 
   final String? hint;
@@ -15,6 +15,8 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkTheme = Theme.of(context).brightness == Brightness.dark;
+    
     return TextFormField(
       controller: controller,
       validator: validator,
@@ -23,6 +25,11 @@ class CustomTextField extends StatelessWidget {
       onTap: onTap,
       decoration: InputDecoration(
         hintText: hint,
+        hintStyle: TextStyle(
+          color: isDarkTheme 
+            ? Colors.white.withOpacity(0.7) 
+            : Colors.grey.withOpacity(0.7)
+        ),
         suffixIcon: suffixIcon
       ),
     );

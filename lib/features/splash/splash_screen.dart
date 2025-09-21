@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Lottie.asset(AppImages.logo , width: 250),
-            Text('Taskati' , style: TextStyles.bodyStyle(Colors.black, fontSize: 24 , fontWeight: FontWeight.w600),),
+            Text('Taskati' , style: TextStyles.bodyStyle(color: Colors.black, fontSize: 24 , fontWeight: FontWeight.w600),),
             Gap(15),
             Text('It\'s time to get organized' , style: TextStyles.smallStyle(fontSize: 16),)
           ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:hive/hive.dart';
 import 'package:taskati/features/home/widgets/home_headear.dart';
+import 'package:taskati/features/home/widgets/task_list_builder.dart';
 import 'package:taskati/features/home/widgets/today_headear.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,6 +18,9 @@ class HomeScreen extends StatelessWidget {
               HomeHeadear(),
               Gap(20),
               TodayHeader(),
+              Gap(20),
+             
+              TaskListBuilder(),
             ],
           ),
         ),
