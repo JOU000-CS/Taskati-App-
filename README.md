@@ -81,11 +81,7 @@ If you added images or fonts, ensure `pubspec.yaml` includes them:
 flutter:
   assets:
     - assets/screenshots/
-    # - assets/images/
-  # fonts:
-  #   - family: Inter
-  #     fonts:
-  #       - asset: assets/fonts/Inter-Regular.ttf
+
 ```
 
 ## Run the App
@@ -102,19 +98,6 @@ flutter:
   flutter run -d ios
   ```
 
-- Web:
-  ```bash
-  flutter run -d chrome
-  ```
-
-- Desktop (if enabled):
-  ```bash
-  flutter config --enable-macos-desktop
-  flutter config --enable-windows-desktop
-  flutter config --enable-linux-desktop
-  flutter devices
-  flutter run -d macos  # or windows / linux
-  ```
 
 ## Build Releases
 
@@ -133,10 +116,6 @@ flutter:
   flutter build ios --release
   ```
 
-- Web:
-  ```bash
-  flutter build web --release
-  ```
 
 ## Project Structure
 This is a typical Flutter structure. Update this to reflect your actual layout.
@@ -175,10 +154,6 @@ Contributions are welcome!
 - Fork the repo and create a feature branch
 - Make changes with clear commit messages
 - Open a Pull Request with a description and screenshots if UI changes
-
-## License
-<!-- Choose a license and update this section. If you add a LICENSE file, link it here. -->
-This project is currently unlicensed. Consider adding a license (e.g., MIT, Apache-2.0) by creating a `LICENSE` file in the root.
 
 ## Contact
 - Author: @JOU000-CS
